@@ -22,7 +22,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest tests/
+        run: |
+          cd pycalculator  # Change to the project's root directory
+          pytest tests/
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
